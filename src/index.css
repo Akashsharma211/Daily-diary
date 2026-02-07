@@ -1,0 +1,184 @@
+:root {
+  --bg: #0b0e14;
+  --card-bg: rgba(22, 27, 34, 0.95);
+  --accent: #6366f1;
+  --accent-secondary: #22c55e;
+  --accent-glow: rgba(99, 102, 241, 0.4);
+  --border-color: #30363d;
+  --manga-border: 3px solid #000;
+  --neo-shadow: 8px 8px 0px #000;
+}
+
+/* Base Setup */
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--bg);
+  background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+  color: #e6edf3;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* Advanced Card Design */
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 16px;
+  border: var(--manga-border);
+  box-shadow: var(--neo-shadow);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0px var(--accent);
+  border-color: var(--accent);
+}
+
+/* Cool Typography */
+h1, h2, h3 {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -1px;
+}
+
+.clock {
+  font-family: 'Courier New', monospace;
+  font-size: clamp(1.5rem, 5vw, 2.5rem); /* Responsive font size */
+  color: var(--accent);
+  text-shadow: 3px 3px 0px #000;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Interactive Inputs */
+textarea, .todo-input input, .calendar-input {
+  width: 100%;
+  background: #0d1117;
+  color: #fff;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+textarea:focus, input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: #161b22;
+  box-shadow: 0 0 15px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+/* Button with Pop Effect */
+button {
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 10px;
+  border: 2px solid #000;
+  cursor: pointer;
+  background: var(--accent);
+  color: white;
+  font-weight: 800;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0px #000;
+  transition: all 0.1s ease;
+}
+
+button:hover {
+  filter: brightness(1.1);
+  transform: scale(1.02);
+}
+
+button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px #000;
+}
+
+/* Specific TODO Styling */
+.todo-input {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.todo-input button {
+  flex: 0 0 60px; /* Square button for adding */
+  background: var(--accent-secondary);
+}
+
+.todo-item {
+  background: #1c2128;
+  padding: 15px;
+  border-radius: 12px;
+  border: 2px solid #000;
+  box-shadow: 4px 4px 0px #000;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: 0.3s ease;
+}
+
+.todo-item:hover {
+  transform: translateX(8px);
+  border-color: var(--accent-secondary);
+}
+
+.todo-item span.done {
+  text-decoration: line-through;
+  color: #8b949e;
+  filter: grayscale(1);
+}
+
+/* ---------- RESPONSIVE GRID ---------- */
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px 15px;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+
+  .todo-input {
+    flex-direction: column;
+  }
+
+  .todo-input button {
+    width: 100%;
+  }
+}
+
+/* Animated Gradient Background for Header Cards */
+.card-header {
+  border-left: 8px solid var(--accent);
+  padding-left: 15px;
+  margin-bottom: 20px;
+}
+@media (min-width: 900px) {
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns for desktop */
+    gap: 20px;
+    align-items: start;
+  }
+  .main-grid > *:first-child { grid-column: 1 / -1; } /* Clock/Header spans across */
+}
