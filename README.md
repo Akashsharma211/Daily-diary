@@ -1,16 +1,32 @@
-# React + Vite
+AI Life Organizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bridging productivity and self-reflection with Generative AI
 
-Currently, two official plugins are available:
+AI Life Organizer is a smart diary and productivity suite designed to help users track their daily progress and mental well-being. Unlike standard journals, it leverages the power of AI to analyze your thoughts, providing constructive feedback and motivational insights.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+✨ Features
 
-## React Compiler
+📝 Smart Diary: Capture your thoughts with a distraction-free journal editor.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🤖 AI Reflection: Integrated with AI to provide instant analysis, emotional insights, and personalized motivation.
 
-## Expanding the ESLint configuration
+📅 Dynamic Calendar: Navigate through time to revisit past entries and track your consistency.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+✅ Integrated To-Do List: Manage tasks directly alongside your thoughts to align your "to-dos" with your "feelings."
+
+⏰ Live Clock: Stay grounded in the present moment with a sleek real-time clock interface.
+
+💾 Local Persistence: All your data is securely stored in localStorage, ensuring privacy and offline access.
+
+⚡ Modern UI: A responsive "Neo-Manga" design featuring high-contrast Neubrutalist elements and fluid interactions.
+
+<img width="1042" height="908" alt="Screenshot 2026-02-07 195147" src="https://github.com/user-attachments/assets/9152be87-4bfc-4371-97b1-bff5e34f9511" />
+
+
+AI Insights
+
+
+
+
+
+Created by Akash Kumar Sharma
