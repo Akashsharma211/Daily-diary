@@ -182,3 +182,185 @@ button:active {
   }
   .main-grid > *:first-child { grid-column: 1 / -1; } /* Clock/Header spans across */
 }
+/* ---------- MOBILE FIRST (Default) ---------- */
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding: 20px 14px;
+}
+
+.card {
+  padding: 1.4rem;
+}
+
+.clock {
+  font-size: clamp(1.4rem, 6vw, 2rem);
+}
+
+/* Stack inputs nicely */
+.todo-input {
+  flex-direction: column;
+}
+
+.todo-input button {
+  width: 100%;
+}
+
+/* ---------- TABLET (≥ 600px) ---------- */
+@media (min-width: 600px) {
+  .container {
+    max-width: 720px;
+    padding: 32px 20px;
+  }
+
+  .todo-input {
+    flex-direction: row;
+  }
+
+  .todo-input button {
+    width: auto;
+  }
+
+  .clock {
+    font-size: clamp(2rem, 4vw, 2.6rem);
+  }
+}
+
+/* ---------- LAPTOP / DESKTOP (≥ 900px) ---------- */
+@media (min-width: 900px) {
+  .container {
+    max-width: 1100px;
+  }
+
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  /* Clock spans full width */
+  .main-grid > :first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---------- LARGE SCREENS (≥ 1200px) ---------- */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1300px;
+  }
+
+  .card {
+    padding: 2.2rem;
+  }
+
+  .clock {
+    font-size: 3rem;
+  }
+}
+
+
+/* Controlled Width for the AI Card */
+.ai-card-wrapper {
+  max-width: 600px; /* Reduces width from the default 800px/1100px */
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+/* Fix for Text Wrapping inside <pre> */
+.ai-content {
+  white-space: pre-wrap;       /* CSS3 */
+  white-space: -moz-pre-wrap;  /* Firefox */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  
+  font-family: 'Inter', sans-serif; /* Matching your body font for readability */
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #c9d1d9;
+  overflow-x: hidden; /* Prevents horizontal scroll entirely */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .ai-card-wrapper {
+    max-width: 100%;
+    padding: 1rem;
+  }
+  
+  .ai-content {
+    font-size: 0.85rem;
+  }
+}
+
+/* 1. Header & Image Spacing */
+.card-header {
+  border-left: 8px solid var(--accent);
+  padding-left: 15px;
+  /* Added margin to give the "Analyze My Day" button/image div room */
+  margin: 20px 0 40px 0; 
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* 2. Enhanced AI Card Responsiveness */
+.ai-card-wrapper {
+  /* Use a percentage width with a max-limit for better scaling */
+  width: 95%; 
+  max-width: 700px; 
+  margin: 2rem auto;
+  box-sizing: border-box;
+}
+
+/* 3. Refined Grid Logic for All Devices */
+.main-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Desktop/Large Tablet Override */
+@media (min-width: 900px) {
+  .main-grid {
+    display: grid;
+    /* Changed from 1fr 1fr to ensure AI response has enough breathing room */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+    gap: 30px;
+  }
+  
+  .main-grid > :first-child { 
+    grid-column: 1 / -1; 
+  }
+}
+
+/* 4. Text & Content wrapping */
+.ai-content {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word; /* Modern browser support */
+  font-size: clamp(0.85rem, 2vw, 1rem); /* Fluid typography */
+  line-height: 1.7;
+  color: #e6edf3;
+}
+
+/* 5. Mobile Specific Fixes */
+@media (max-width: 480px) {
+  .card {
+    padding: 1.2rem;
+    border-width: 2px; /* Thinner borders for small screens */
+  }
+  
+  .container {
+    padding: 10px;
+  }
+  
+  .ai-card-wrapper {
+    width: 100%;
+    box-shadow: 4px 4px 0px #000; /* Smaller shadow for mobile */
+  }
+}
